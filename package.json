@@ -1,0 +1,25 @@
+{
+  "name": "video-demo-gratuite-remotion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Vidéo publicitaire verticale premium Remotion pour une démo gratuite de site web.",
+  "scripts": {
+    "prepare-assets": "node scripts/prepare-assets.ts",
+    "prebuild": "npm run prepare-assets",
+    "start": "remotion preview src/Root.tsx",
+    "build": "remotion render src/Root.tsx DemoVideo out/video-demo-gratuite.mp4 --codec=h264 --pixel-format=yuv420p"
+  },
+  "dependencies": {
+    "@remotion/cli": "latest",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "remotion": "latest",
+    "sharp": "latest"
+  },
+  "devDependencies": {
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "typescript": "latest"
+  }
+}
