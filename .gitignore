@@ -1,6 +1,5 @@
 node_modules/
 package-lock.json
-public/generated-assets/*.png
-out/*.mp4
-.remotion/
 dist/
+out/
+*.mp4
