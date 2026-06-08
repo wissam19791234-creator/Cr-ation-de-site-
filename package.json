@@ -1,0 +1,10 @@
+{
+  "name": "video-demo-gratuite-html",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Vidéo publicitaire verticale premium convertie en HTML/CSS autonome.",
+  "scripts": {
+    "build": "node scripts/build-web.mjs",
+    "start": "node scripts/build-web.mjs"
+  }
+}
