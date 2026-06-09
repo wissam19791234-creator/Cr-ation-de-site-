@@ -84,3 +84,15 @@ Je ne peux pas envoyer directement un MP4 dans le chat. Pour obtenir un MP4 :
 - transformation avant/après ;
 - formulaire premium ;
 - CTA final stable.
+
+
+## Résoudre les conflits GitHub
+
+Si GitHub affiche des conflits avec l'ancienne version Remotion, garde la version **HTML/CSS 3D autonome**. Le détail exact est dans `MERGE_CONFLICTS.md`.
+
+Résumé rapide :
+
+- `.gitignore` : garder les règles `dist/`, `out/`, `*.mp4`, `public/references/*` et `!public/references/.gitkeep` ;
+- `README.md` : garder le README qui commence par `Pub verticale premium — storyboard HTML 3D 14 secondes` ;
+- `package.json` : garder seulement les scripts `build` et `start` avec `node scripts/build-web.mjs` ;
+- `scripts/build-web.mjs` : garder le message `Ouvrez dist/index.html pour voir la vidéo HTML.`.
