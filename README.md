@@ -1,96 +1,86 @@
-# Vidéo HTML — Démo gratuite de site web
+# Pub verticale premium — storyboard HTML 3D 14 secondes
 
-Ce projet a été converti en **HTML/CSS 3D autonome**, sans Remotion obligatoire, pour éviter les conflits Remotion et les problèmes de rendu vidéo pendant le déploiement.
+Ce projet fournit une publicité verticale 9:16 en **HTML/CSS 3D autonome**, pensée comme deux clips de 7 secondes :
 
-Le résultat est une publicité verticale 9:16 animée de 15 secondes, lisible dans un navigateur et déployable directement sur Vercel.
+- Clip 1 : hook + problème, de 0s à 7s.
+- Clip 2 : solution + bénéfices + CTA, de 7s à 14s.
 
-## Résultat
+Le rendu ne dépend pas de Remotion pour éviter les conflits de merge et les problèmes de build Vercel. Il reste compatible avec un export MP4 via enregistrement écran ou outil de capture navigateur.
 
-- Page principale : `index.html`
-- Déploiement Vercel : `npm run build` puis publication de `dist/`
-- Format visuel : vertical 9:16
-- Durée de l'animation : 15 secondes
-- Style : 3D premium, holographique, champagne/bleu nuit
-- Message principal : `Ton Instagram attire. Ton site doit convertir.`
+## Utiliser les 30 photos
 
-## Pourquoi HTML au lieu de Remotion ?
+Ajoute tes 30 photos de référence ici :
 
-Tu as indiqué qu'il y avait un gros conflit au niveau de Remotion. Pour régler ça, la vidéo a été convertie en animation HTML/CSS 3D :
+```text
+public/references/photo-01.jpg
+public/references/photo-02.jpg
+...
+public/references/photo-30.jpg
+```
 
-- pas besoin de rendu Remotion sur Vercel ;
-- pas de gros fichiers binaires à extraire ;
-- pas de MP4 dans Git ;
-- déploiement Vercel simple ;
-- animation visible directement sur téléphone ou ordinateur ;
-- effets 3D CSS inclus : perspective, rotation téléphone/laptop, profondeur, orbites, grille holographique, cartes flottantes et CTA lumineux.
+Les images ne sont pas commit dans Git pour éviter les problèmes de fichiers binaires. Le dossier contient seulement `.gitkeep`.
 
-## Effets 3D inclus
-
-La page contient des animations 3D CSS directement dans `index.html` :
-
-- téléphone en perspective avec rotation `rotateY` / `rotateX` ;
-- laptop 3D flottant ;
-- grille holographique avec profondeur ;
-- anneaux orbitaux et glow champagne ;
-- bulles DM en profondeur ;
-- split-screen avant/après incliné ;
-- formulaire 3D qui pop ;
-- portfolio final en cartes flottantes ;
-- CTA lumineux avec pulse.
-
-Aucune librairie 3D externe n'est nécessaire.
+La page utilise les photos comme storyboard visuel : hook, chaos DM, transformation, dashboard, formulaire et CTA final. Si une photo manque, un fallback premium champagne/bleu nuit s'affiche automatiquement.
 
 ## Déployer sur Vercel
 
-Dans Vercel, garde ces réglages :
+Dans Vercel, garde :
 
 ```text
 Build Command: npm run build
 Output Directory: dist
 ```
 
-Le fichier `vercel.json` configure déjà ces valeurs.
+`vercel.json` contient déjà cette configuration.
 
-## Prévisualiser localement
-
-Ouvre simplement `index.html` dans un navigateur.
-
-Ou lance :
+## Prévisualiser
 
 ```bash
 npm run build
 ```
 
-Puis ouvre `dist/index.html`.
+Puis ouvre :
 
-## Transformer en MP4
+```text
+dist/index.html
+```
 
-Je ne peux pas envoyer un MP4 directement dans le chat. Pour obtenir un MP4 :
+Tu peux aussi ouvrir directement `index.html`.
 
-1. Ouvre la page déployée Vercel ou `index.html` localement.
-2. Mets la fenêtre en format téléphone si possible.
-3. Lance un enregistrement écran pendant 15 secondes.
-4. Importe l'enregistrement dans CapCut.
-5. Recadre en 9:16 si besoin.
+## Ajouter les textes dans CapCut
 
-C'est la méthode la plus simple depuis mobile.
+Le HTML laisse des zones visuelles calmes en haut et en bas pour ajouter les textes dans CapCut. Les timings exacts sont dans `capcut-texts.txt`.
 
-## Textes inclus dans l'animation
+Style conseillé :
 
-- `Ton Instagram attire.`
-- `Ton site doit convertir.`
-- `Les DM font perdre du temps.`
-- `Une vraie vitrine change tout.`
-- `Gain de temps.`
-- `Demandes plus claires.`
-- `Le client remplit.`
-- `Vous recevez.`
-- `Sans site : confusion.`
-- `Avec site : clarté.`
-- `Démo gratuite.`
-- `Venez DM.`
-- Bouton : `Envoyez DÉMO`
+- police moderne, très lisible ;
+- texte ivoire ;
+- mots importants en champagne ;
+- blur-in, fade-up, zoom léger ;
+- jamais plus de 5 à 7 mots à l'écran.
 
 ## Voix off
 
-Le texte de voix off est conservé dans `voiceover.txt`. Tu peux le copier dans CapCut, ElevenLabs ou un outil TTS.
+La voix off complète et les voix off par clip sont dans `voiceover.txt`.
+
+## Transformer en MP4
+
+Je ne peux pas envoyer directement un MP4 dans le chat. Pour obtenir un MP4 :
+
+1. Déploie sur Vercel ou ouvre `index.html` localement.
+2. Ouvre la page en plein écran sur mobile.
+3. Enregistre l'écran pendant 14-15 secondes.
+4. Importe dans CapCut.
+5. Ajoute les textes depuis `capcut-texts.txt` et la voix off depuis `voiceover.txt`.
+
+## Effets inclus
+
+- profondeur 3D CSS ;
+- grille holographique ;
+- light sweep champagne ;
+- téléphone mockup 3D ;
+- dashboard 3D ;
+- bulles DM abstraites sans faux texte ;
+- transformation avant/après ;
+- formulaire premium ;
+- CTA final stable.
