@@ -30,4 +30,4 @@ if (existsSync(publicDir)) {
 }
 
 console.log('Vercel static build ready in dist/.');
-console.log('Pour rendre la vidéo localement, utilisez: npm run render');
+console.log('Ouvrez dist/index.html pour voir la vidéo HTML.');

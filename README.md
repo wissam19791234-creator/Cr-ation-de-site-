@@ -1,129 +1,98 @@
-# Vidéo Remotion — Démo gratuite de site web
+# Pub verticale premium — storyboard HTML 3D 14 secondes
 
-Projet Remotion complet pour générer une publicité verticale premium de 15 secondes, prête pour TikTok / Instagram Reels.
+Ce projet fournit une publicité verticale 9:16 en **HTML/CSS 3D autonome**, pensée comme deux clips de 7 secondes :
 
-## Format
+- Clip 1 : hook + problème, de 0s à 7s.
+- Clip 2 : solution + bénéfices + CTA, de 7s à 14s.
 
-- Composition Remotion : `DemoVideo`
-- Résolution : `1080x1920`
-- FPS : `30`
-- Durée : `15 secondes` / `450 frames`
-- Rendu final : `out/video-demo-gratuite.mp4`
+Le rendu ne dépend pas de Remotion pour éviter les conflits de merge et les problèmes de build Vercel. Il reste compatible avec un export MP4 via enregistrement écran ou outil de capture navigateur.
 
+## Utiliser les 30 photos
 
-## Important : fichiers binaires
+Ajoute tes 30 photos de référence ici :
 
-Les PNG générés et le MP4 final ne sont pas versionnés dans Git, car certaines interfaces de chat ou d'extraction affichent `les fichiers binaires ne sont pas pris en charge`.
-
-C'est normal : le dépôt reste léger et lisible en texte. Pour recréer les fichiers binaires localement :
-
-```bash
-npm run prepare-assets
-npm run render
+```text
+public/references/photo-01.jpg
+public/references/photo-02.jpg
+...
+public/references/photo-30.jpg
 ```
 
-Après `npm run prepare-assets`, les 12 PNG requis apparaissent dans `public/generated-assets/`. Après `npm run render`, le MP4 apparaît dans `out/video-demo-gratuite.mp4`.
+Les images ne sont pas commit dans Git pour éviter les problèmes de fichiers binaires. Le dossier contient seulement `.gitkeep`.
 
-## Installation
+La page utilise les photos comme storyboard visuel : hook, chaos DM, transformation, dashboard, formulaire et CTA final. Si une photo manque, un fallback premium champagne/bleu nuit s'affiche automatiquement.
 
-```bash
-npm install
+## Déployer sur Vercel
+
+Dans Vercel, garde :
+
+```text
+Build Command: npm run build
+Output Directory: dist
 ```
 
-> Note : l’installation du skill `npx skills add remotion-dev/skills` a été tentée. Si votre registre npm bloque ce paquet, le projet fonctionne en Remotion classique.
-
-
-## Déploiement Vercel
-
-Sur Vercel, la commande `npm run build` sert uniquement à préparer un site statique dans `dist/`. Elle ne rend pas le MP4, car le rendu Remotion est une tâche de production vidéo à lancer localement ou dans un job séparé.
-
-Si Vercel affiche `Command "npm run build" exited with 1`, redéployez avec cette version : `npm run build` exécute maintenant `scripts/build-web.mjs`, copie `index.html` dans `dist/`, puis termine avec succès.
-
-Pour obtenir la vidéo, utilisez toujours `npm run render` hors du build Vercel.
-
-## Générer les assets
-
-```bash
-npm run prepare-assets
-```
-
-Le script crée automatiquement `public/generated-assets/` et génère au moins 12 visuels PNG locaux, sans dépendre d’images externes : fonds premium, mockups abstraits, DM, dashboard, formulaire, CTA, portfolio, light sweep.
+`vercel.json` contient déjà cette configuration.
 
 ## Prévisualiser
 
 ```bash
-npm run start
+npm run build
 ```
 
-## Rendre la vidéo en MP4
-
-```bash
-npm run render
-```
-
-Résultat attendu :
+Puis ouvre :
 
 ```text
-out/video-demo-gratuite.mp4
+dist/index.html
 ```
 
+Tu peux aussi ouvrir directement `index.html`.
 
-## Récupérer la vidéo
+## Ajouter les textes dans CapCut
 
-Je ne peux pas intégrer un fichier MP4 directement dans un message de chat. Le rendu doit être récupéré comme fichier de projet :
+Le HTML laisse des zones visuelles calmes en haut et en bas pour ajouter les textes dans CapCut. Les timings exacts sont dans `capcut-texts.txt`.
 
-1. Lancez `npm run render`.
-2. Ouvrez le dossier `out/`.
-3. Récupérez `out/video-demo-gratuite.mp4` et importez-le dans TikTok, Instagram Reels, CapCut ou votre outil de montage.
+Style conseillé :
 
-Si vous utilisez une interface Codex/GitHub, téléchargez le fichier depuis les artefacts, le workspace, ou après avoir cloné la branche et exécuté la commande de rendu localement.
+- police moderne, très lisible ;
+- texte ivoire ;
+- mots importants en champagne ;
+- blur-in, fade-up, zoom léger ;
+- jamais plus de 5 à 7 mots à l'écran.
 
-## Ajouter la voix off
+## Voix off
 
-Le texte exact est dans `src/voiceover.txt`.
+La voix off complète et les voix off par clip sont dans `voiceover.txt`.
 
-Méthode simple :
+## Transformer en MP4
 
-1. Rendre la vidéo avec `npm run render`.
-2. Copier le contenu de `src/voiceover.txt` dans CapCut, ElevenLabs, Narakeet, Balabolka, ou un outil TTS gratuit.
-3. Importer l’audio généré dans CapCut ou votre outil de montage.
-4. Aligner la voix off sur les 15 secondes.
+Je ne peux pas envoyer directement un MP4 dans le chat. Pour obtenir un MP4 :
 
-Aucune clé API n’est nécessaire pour rendre la vidéo muette.
+1. Déploie sur Vercel ou ouvre `index.html` localement.
+2. Ouvre la page en plein écran sur mobile.
+3. Enregistre l'écran pendant 14-15 secondes.
+4. Importe dans CapCut.
+5. Ajoute les textes depuis `capcut-texts.txt` et la voix off depuis `voiceover.txt`.
 
-## Modifier les textes
+## Effets inclus
 
-Les scènes et textes principaux sont dans `src/Video.tsx` :
+- profondeur 3D CSS ;
+- grille holographique ;
+- light sweep champagne ;
+- téléphone mockup 3D ;
+- dashboard 3D ;
+- bulles DM abstraites sans faux texte ;
+- transformation avant/après ;
+- formulaire premium ;
+- CTA final stable.
 
-- `Ton Instagram attire.`
-- `Ton site doit convertir.`
-- `Les DM font perdre du temps.`
-- `Une vraie vitrine change tout.`
-- `Gain de temps.`
-- `Demandes plus claires.`
-- `Le client remplit.`
-- `Vous recevez.`
-- `Sans site : confusion.`
-- `Avec site : clarté.`
-- `Démo gratuite.`
-- `Venez DM.`
 
-## Remplacer ou ajouter des images
+## Résoudre les conflits GitHub
 
-- Assets générés : `public/generated-assets/`
-- Images de référence possibles : `public/references/`
+Si GitHub affiche des conflits avec l'ancienne version Remotion, garde la version **HTML/CSS 3D autonome**. Le détail exact est dans `MERGE_CONFLICTS.md`.
 
-Le composant `GeneratedImage` affiche les PNG générés. Les UI principales restent codées en React/CSS/SVG pour garder un rendu cohérent et premium même sans Internet.
+Résumé rapide :
 
-## Structure principale
-
-```text
-src/Root.tsx
-src/Video.tsx
-src/styles.css
-src/voiceover.txt
-src/components/
-scripts/prepare-assets.ts
-public/generated-assets/
-out/
-```
+- `.gitignore` : garder les règles `dist/`, `out/`, `*.mp4`, `public/references/*` et `!public/references/.gitkeep` ;
+- `README.md` : garder le README qui commence par `Pub verticale premium — storyboard HTML 3D 14 secondes` ;
+- `package.json` : garder seulement les scripts `build` et `start` avec `node scripts/build-web.mjs` ;
+- `scripts/build-web.mjs` : garder le message `Ouvrez dist/index.html pour voir la vidéo HTML.`.
