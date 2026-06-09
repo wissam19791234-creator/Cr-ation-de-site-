@@ -81,3 +81,14 @@ Le plus simple est de faire les conflits depuis un ordinateur :
 3. Pour les 4 fichiers, garde la version HTML/CSS 3D indiquée ci-dessus.
 4. Clique **Mark as resolved** pour chaque fichier.
 5. Clique **Commit merge**.
+
+
+## Vérification automatique
+
+Après résolution, lance :
+
+```bash
+npm run check:conflicts
+```
+
+La commande vérifie que `.gitignore`, `README.md`, `package.json` et `scripts/build-web.mjs` ne contiennent plus de marqueurs `<<<<<<<`, `=======` ou `>>>>>>>`.

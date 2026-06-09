@@ -5,6 +5,7 @@
   "description": "Vidéo publicitaire verticale premium convertie en HTML/CSS autonome.",
   "scripts": {
     "build": "node scripts/build-web.mjs",
-    "start": "node scripts/build-web.mjs"
+    "start": "node scripts/build-web.mjs",
+    "check:conflicts": "node scripts/check-conflicts.mjs"
   }
 }
