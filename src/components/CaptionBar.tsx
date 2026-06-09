@@ -1,0 +1,2 @@
+import React from 'react';
+export const CaptionBar: React.FC<{text: string}> = ({text}) => <div style={{position:'absolute', zIndex:48, left:72, right:72, bottom:72, minHeight:64, borderRadius:24, padding:'16px 24px', background:'rgba(7,8,13,.56)', border:'1px solid rgba(255,248,237,.1)', color:'rgba(255,248,237,.82)', fontSize:26, fontWeight:700, textAlign:'center', backdropFilter:'blur(12px)'}}>{text}</div>;
