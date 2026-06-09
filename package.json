@@ -1,11 +1,25 @@
 {
-  "name": "video-demo-gratuite-html",
+  "name": "video-demo-gratuite-remotion",
   "version": "1.0.0",
   "private": true,
-  "description": "Vidéo publicitaire verticale premium convertie en HTML/CSS autonome.",
+  "description": "Vidéo publicitaire verticale premium Remotion avec textes lisibles et transitions.",
   "scripts": {
-    "build": "node scripts/build-web.mjs",
-    "start": "node scripts/build-web.mjs",
-    "check:conflicts": "node scripts/check-conflicts.mjs"
+    "build": "node scripts/render-video.mjs",
+    "start": "remotion preview src/Root.tsx",
+    "still": "remotion still src/Root.tsx DemoVideo out/still.png",
+    "check:conflicts": "node scripts/check-conflicts.mjs",
+    "render:remotion": "remotion render src/Root.tsx DemoVideo out/video-demo-gratuite.mp4 --codec=h264 --pixel-format=yuv420p"
+  },
+  "dependencies": {
+    "@remotion/cli": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "remotion": "latest",
+    "sharp": "latest"
+  },
+  "devDependencies": {
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "typescript": "latest"
   }
 }
